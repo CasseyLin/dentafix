@@ -1,12 +1,10 @@
 <footer class="footer">
     <div class="w-100 clearfix">
-        <span class="text-center text-sm-left d-md-inline-block">Copyright © 2022 DentaFix. All Rights Reserved.</span>
-        <span class="float-none float-sm-right mt-1 mt-sm-0 text-center class="text-dark" target="_blank"">Developed with <i class="fa fa-heart text-danger"></i> by Cassey</span>
+        <span class="text-center text-sm-left d-md-inline-block">Copyright © 2022 Dentafix. All Rights Reserved.</span>
+        <span class="float-none float-sm-right mt-1 mt-sm-0 text-center">Developed with <i class="fa fa-heart text-danger"></i> by Cassey</a></span>
     </div>
 </footer>
 
-</div>
-</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>window.jQuery || document.write('<script src="src/js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
@@ -28,7 +26,7 @@
 <script src="{{asset('template/js/widgets.js')}}"></script>
 <script src="{{asset('template/js/charts.js')}}"></script>
 <script src="{{asset('template/dist/js/theme.min.js')}}"></script>
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
 <script type="text/javascript">
 $(document).ready(function(){
 $("#datepicker").datetimepicker({
@@ -37,6 +35,18 @@ $("#datepicker").datetimepicker({
 })
 </script>
 
+<script>
+    var botmanWidget = {
+        aboutText: 'Developed with❤️ by Cassey',
+        introMessage: "✋ Hi! I am Cassey, your assistant chatbot from DentaFix~",
+        title:"DentaFix Chatbot",
+        placeholderText: 'Ask Cassey Something...',
+        bubbleBackground: '#FFFFFF',
+        mainColor:'#80E2FF',
+        aboutText:'Developed with ❤️ by Cassey',
+        aboutLink:'https://drive.google.com/file/d/1Pc8pRFxdSyBHazol4EZkqf_WS0raKh1g/view?usp=sharing',
+        bubbleAvatarUrl:'/chatbot/chatbot.jpg'
+    };
+</script>
 
-</body>
-</html>
+<script src="{{asset('js/app.js')}}"defer></script>

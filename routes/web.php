@@ -38,12 +38,15 @@ Route::group(['middleware'=>['auth', 'patient']], function(){
     Route::post('/user-Profile','ProfileController@store')->name('profile.store');
     Route::post('/userProfile-pic','ProfileController@profilePic')->name('profile.pic');
     Route::get('/my-prescription','PageController@myPrescription')->name('my.prescription');
+    Route::post('/userProfile-dentalpic','ProfileController@dentalPic')->name('dental.pic');
     Route::resource('page','PageController');
     });
     
     
     Route::group(['middleware'=>['auth', 'admin']], function(){
         Route::resource('dentist', 'DentistController');
+        Route::resource('admin', 'AdminController');
+        Route::resource('patient','PatientController');
         Route::get('/patients','PatientListController@index')->name('patient');
         Route::get('/visitStatus/update/{id}','PatientListController@visitStatus')->name('update.status');
         Route::get('/patients/allAppointments','PatientListController@allTimeAppointments')->name('patients.all');

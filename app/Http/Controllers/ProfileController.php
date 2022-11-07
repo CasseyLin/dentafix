@@ -41,4 +41,19 @@ class ProfileController extends Controller
             return redirect()->back()->with('message', 'Your profile picture has been updated successfully!');
         }
     }
+
+    public function dentalPic(Request $request){
+        $this->validate($request, ['file'=>'
+        required|image|mimes:jpeg,jpg,png']);
+        if($request->hasFile('file')){
+            $dentalimage = $request->file('file');
+            $name = time().'.'.$dentalimage->getClientOriginalExtension();
+            $destination = public_path('/dental');
+            $dentalimage->move($destination, $name);
+            User::where('id',auth()->user()->id)->update([
+                'dental_image'=>$name
+            ]);
+            return redirect()->back()->with('message', 'Your dental image has been updated successfully!');
+        }
+    }
 }

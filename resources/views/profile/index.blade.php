@@ -111,9 +111,43 @@
                     @enderror
                     <button type="submit" class="btn btn-primary">Update</button>
                 </div>
+                </form>
+            </div>
+                <br><br><br>
+                <div class="card-header">Dental Image</div>
+                <form action="{{ route('dental.pic') }}" method="post"
+                enctype="multipart/form-data">@csrf
+                <div class="card-body">
+                    @if(!auth()->user()->dental_image)
+                    <img src="/Images/noimage.png" width="100">
+                    @else
+                    <img src="/dental/{{auth()->user()->dental_image}}" width="100">
+                    @endif
+                    <br>
+                    <input type="file" name="file" class="form-control">
+                    <br>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </div>
             </form>
             </div>
         </div>
     </div>
 </div>
 @endsection
+
+
+<script>
+    var botmanWidget = {
+        aboutText: 'Developed with❤️ by Cassey',
+        introMessage: "✋ Hi! I am Cassey, your assistant chatbot from DentaFix~",
+        title:"DentaFix Chatbot",
+        placeholderText: 'Ask Cassey Something...',
+        bubbleBackground: '#FFFFFF',
+        mainColor:'#80E2FF',
+        aboutText:'Developed with ❤️ by Cassey',
+        aboutLink:'https://drive.google.com/file/d/1Pc8pRFxdSyBHazol4EZkqf_WS0raKh1g/view?usp=sharing',
+        bubbleAvatarUrl:'/chatbot/chatbot.jpg'
+    };
+  </script>
+  
+  <script src='https://cdn.jsdelivr.net/npm/botman-web-widget@0/build/js/widget.js'></script>

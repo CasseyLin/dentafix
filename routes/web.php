@@ -44,6 +44,7 @@ Route::group(['middleware'=>['auth', 'patient']], function(){
     
     
     Route::group(['middleware'=>['auth', 'admin']], function(){
+        //resource allows to get all methods
         Route::resource('dentist', 'DentistController');
         Route::resource('admin', 'AdminController');
         Route::resource('patient','PatientController');
@@ -63,5 +64,7 @@ Route::group(['middleware'=>['auth', 'patient']], function(){
         Route::post('/prescription','PrescriptionController@store')->name('prescription');
         Route::get('/prescription/{userId}/{date}','PrescriptionController@show')->name('prescription.patientAll');
         Route::get('/prescribed-patients','PrescriptionController@prescribedPatients')->name('prescribed.patients');
+        Route::get('/reservation/list','ReservationController@index')->name('reservation.patients');
+        Route::get('/reservation/today','ReservationController@Today')->name('reservation.today');
     });
     

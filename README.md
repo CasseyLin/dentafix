@@ -3,14 +3,14 @@ This project proposes some ways for the dental clinic to better manage the admin
 
 
 ## Software Development tools
-Visual Studio Code
-PHP with Laravel Framework (Backend)
-Vue with Javascript Framework (Frontend)
-Bootstrap (Frontend)
-Javascript
-MYSQL(Database)
-Botman (Chatbot)
-Mailtrap Email API
+Visual Studio Code,
+PHP with Laravel Framework (Backend),
+Vue with Javascript Framework (Frontend),
+Bootstrap (Frontend),
+Javascript,
+MYSQL(Database),
+Botman (Chatbot), 
+Mailtrap Email API,
 Github (Version Control)
 
 ## Testing performed

@@ -39,6 +39,7 @@ class User extends Authenticatable
     ];
 
     public function role(){
+        //one user can have one role only
         return $this->hasOne('App\Role', 'id', 'role_id');
     }
 

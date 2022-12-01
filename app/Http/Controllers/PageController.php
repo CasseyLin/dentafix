@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use App\Appointment;
 use App\Timeslot;
 use App\User;
@@ -42,7 +43,7 @@ class PageController extends Controller
         $check = $this->checkBookingTimeInterval();
         if($check){
             return redirect()->back()->with('errmessage', 'You have already made an appointment. Please
-            wait for the next day');
+            wait for 24 hours to perform a new booking');
         }
 
         Reservation::create([
@@ -93,7 +94,7 @@ class PageController extends Controller
 
     public function dentistToday(Request $request){
         //with dentists info as well
-        $dentists = Appointment::with('dentist')->whereDate('date',date('Y-m-d'))->get();
+        $dentists = Appointment::with('dentist')->whereDate('date',Carbon::now()->addDay()->format('Y-m-d'))->get();
         return $dentists;
     }
 
@@ -101,30 +102,18 @@ class PageController extends Controller
         $dentists = Appointment::with('dentist')->whereDate('date', $request->date)->get();
         return $dentists;
     }
-
-    public function cancelBook(Request $request){
-        Timeslot::where('appointment_id', $request->appointmentId)
-        ->where('time', $request->time)
-        ->update(['status'=>0]);
-        return redirect()->back()->with('message','Your appointment has been cancelled!');
-    }
     
-    public function cancelBookings(Request $request){
-        $appointments = Reservation::with('dentist')->get();
-        Timeslot::where('appointment_id')
-            ->where('time')
-            ->update(['status'=>2]);
-
-        dd('request');
-        return redirect()->route('my.appointment')->with('message', 'Appointment has been cancelled successufully');
-
-
-    }
 
     public function destroy($id,Request $request){
         //delete reservation in records
         $reservation = Reservation::find($id);
-        $reservationDelete = $reservation->delete();      
+        $reservationDelete = $reservation->delete(); 
+        
+        Timeslot::create([
+            'appointment_id'=>$request->appointmentId,
+            'time'=>$request->time,
+            'status'=>0
+        ]);
 
         //how to update the timeslots status to become 0
         return redirect()->route('my.appointment')->with('message', 'Appointment has been cancelled successfully');

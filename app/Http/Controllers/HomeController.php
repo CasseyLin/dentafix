@@ -21,6 +21,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+     //index for admin, dentist and patient
     public function index()
     {
         if(Auth::user()->role->name=="admin"||Auth::user()->role->name=="dentist"){

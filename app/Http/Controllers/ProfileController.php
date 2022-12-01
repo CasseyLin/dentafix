@@ -33,7 +33,7 @@ class ProfileController extends Controller
         if($request->hasFile('file')){
             $image = $request->file('file');
             $name = time().'.'.$image->getClientOriginalExtension();
-            $destination = public_path('/profile');
+            $destination = public_path('/Images');
             $image->move($destination, $name);
             User::where('id',auth()->user()->id)->update([
                 'image'=>$name
@@ -48,7 +48,7 @@ class ProfileController extends Controller
         if($request->hasFile('file')){
             $dentalimage = $request->file('file');
             $name = time().'.'.$dentalimage->getClientOriginalExtension();
-            $destination = public_path('/dental');
+            $destination = public_path('/Images');
             $dentalimage->move($destination, $name);
             User::where('id',auth()->user()->id)->update([
                 'dental_image'=>$name

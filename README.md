@@ -3,8 +3,25 @@ This project proposes some ways for the dental clinic to better manage the admin
 
 
 ## Software Development tools
+Visual Studio Code
+PHP with Laravel Framework (Backend)
+Vue with Javascript Framework (Frontend)
+Bootstrap (Frontend)
+Javascript
+MYSQL(Database)
+Botman (Chatbot)
+Mailtrap Email API
+Github (Version Control)
+
+## Testing performed
+Unit Testing
+Integration Testing
+System Testing
+
+##Conclusion of the projet
+Dentafix is developed to ease the wokload of the staff and allowthe reservation process to be easier and efficient.
+The poject is successful as the requirmnts proposed are implemented successully,eliminating traditional way of booking by integrating timeslots for booking feature. In addition, chatbot function is also implemented which seems to be a quite new feature for the dental clinic booking website.
 
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
 
 

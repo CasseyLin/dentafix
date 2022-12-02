@@ -1,7 +1,7 @@
-## About DentaFix
+# About DentaFix (Laravel project)
 <img src="https://user-images.githubusercontent.com/92399101/205088877-df101a16-9c5d-408a-ad90-92ed3b4879a9.jpg" width="145" height="140">
 <img src="https://user-images.githubusercontent.com/92399101/205089023-4eaf0a0a-783a-4327-a29a-b33a8b05a925.jpg" width="300" height="180">
-
+This project is built with Laravel 7.
 
 
 
@@ -27,13 +27,7 @@ System Testing </p>
 <p align="justify">Dentafix is developed to ease the wokload of the staff and allowthe reservation process to be easier and efficient.
 The poject is successful as the requirmnts proposed are implemented successully,eliminating traditional way of booking by integrating timeslots for booking feature. In addition, chatbot function is also implemented which seems to be a quite new feature for the dental clinic booking website. </p>
 
-# Laravel Project DentaFix
-
-> Laravel sample website with content retrieving from [prismic.io](https://prismic.io)
-
-This project runs with Laravel version 7.
-
-## Getting started
+## Getting started to run the project
 
 Assuming you've already installed on your machine: PHP (>= 7.0.0), [Laravel](https://laravel.com), [Composer](https://getcomposer.org) and [Node.js](https://nodejs.org).
 
